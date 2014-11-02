@@ -29,6 +29,7 @@ describe('Base', function() {
     describe('Ability to create classes with superclasses', function() {
 
       describe('given a parent class', function () {
+
         it('should create a class which inherits methods from the parent', function () {
           var ParentClass = Base.createClass({
             parentMethod: function () {
@@ -38,6 +39,16 @@ describe('Base', function() {
           var instance = ChildClass.createInstance();
           var prototype = Object.getPrototypeOf(instance);
           expect(Object.getPrototypeOf(prototype).parentMethod).toBe(ParentClass.parentMethod);
+        });
+
+        it('should create a class which has the child as its prototype', function() {
+          var prototype = {
+            childMethod: function () {
+            }
+          };
+          var ChildClass = Base.createClass({}, prototype);
+          var instance = ChildClass.createInstance();
+          expect(Object.getPrototypeOf(instance).childMethod).toBe(prototype.childMethod);
         });
       });
 

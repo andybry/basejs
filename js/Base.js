@@ -12,8 +12,13 @@ var Base = {
   createClass: function(prototype) {
     var newClass = prototype;
     var parentProvided = typeof arguments[1] != 'undefined';
+    var child;
     if(parentProvided) {
+      child = arguments[1];
       newClass = Object.create(prototype);
+      for(var methodName in child) {
+        newClass[methodName] = child[methodName];
+      }
     }
     newClass.createInstance = this.createInstance;
     var needsDefaultInit = typeof newClass._init == 'undefined';
