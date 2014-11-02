@@ -1,0 +1,26 @@
+{
+  "name": "basejs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/andybry/basejs",
+  "authors": [
+    "Andy Bryant <ar.bryant@btinternet.com>"
+  ],
+  "description": "An OOJS implementation allowing classes to be developed in a consistent manner.",
+  "main": "js/Base.js",
+  "keywords": [
+    "OOJS",
+    "OO",
+    "class",
+    "object",
+    "inheritance"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "spec"
+  ]
+}
