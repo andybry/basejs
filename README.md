@@ -45,6 +45,7 @@ var MyClass = Base.createClass({
     // initialisation code goes here, e.g.
     this._firstName = firstName;
     this._surname = surname;
+    return this;
   },
   myMethod: function() {
     // method code goes here, e.g.
