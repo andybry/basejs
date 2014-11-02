@@ -61,6 +61,8 @@ var myInstance = MyClass.createInstance('Andy', 'Bryant');
 var name = myInstance.myMethod();
 ```
 
+If an `_init` method is not provided then the default from Base itself is used. This just returns the newly created instance.
+
 ### 3. Creating a class with inheritance
 
 When you create a class with the `createClass` method, there is the option to pass in a parent class as the first argument. The class that is created will then automatically contain any methods from the parent (via the prototype chain), provided the method is not overridden in the child class.
