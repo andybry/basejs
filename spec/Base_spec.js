@@ -19,7 +19,7 @@ describe('Base', function() {
           return this;
         },
         getName: function() {
-          return this._firstName + ' ' + this._surname
+          return this._firstName + ' ' + this._surname;
         }
       });
       var instance = Person.createInstance('Andy', 'Bryant');
