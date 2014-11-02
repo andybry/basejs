@@ -8,7 +8,7 @@ The problem this library overcomes is the fact that JavaScript does not supply a
 
 ## Usage
 
-First include the Base.js library from the js folder. For IE8 and below you will also need to provide a polyfill for the Object.create method (and the Object.getPrototypeOf method for running the tests).
+First include the Base.js library from the js folder. For IE8 and below you will also need to provide a polyfill for the Object.create method.
 
 Then the following basic patterns can be used:
 

@@ -9,13 +9,13 @@ var Base = {
     return this;
   },
 
-  createClass: function(prototype) {
-    var newClass = prototype;
+  createClass: function(template) {
+    var newClass = template;
     var parentProvided = typeof arguments[1] != 'undefined';
     var child;
     if(parentProvided) {
       child = arguments[1];
-      newClass = Object.create(prototype);
+      newClass = Object.create(template);
       for(var methodName in child) {
         newClass[methodName] = child[methodName];
       }

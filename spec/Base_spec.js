@@ -2,13 +2,13 @@ describe('Base', function() {
 
   describe('Ability to create classes without superclasses', function() {
 
-    it('should create classes from prototypes', function() {
-      var prototype = {
+    it('should create classes from a template', function() {
+      var template = {
         myMethod: function() {}
       };
-      var newClass = Base.createClass(prototype);
+      var newClass = Base.createClass(template);
       var instance = newClass.createInstance();
-      expect(Object.getPrototypeOf(instance).myMethod).toBe(prototype.myMethod);
+      expect(instance.myMethod).toBe(template.myMethod);
     });
 
     it('should initialise instances using the initialization method', function() {
@@ -33,25 +33,24 @@ describe('Base', function() {
     describe('given a parent class', function () {
 
       it('should create a class which inherits methods from the parent', function () {
-        var parentPrototype = {
+        var parentTemplate = {
           parentMethod: function () {
           }
         };
-        var ParentClass = Base.createClass(parentPrototype);
+        var ParentClass = Base.createClass(parentTemplate);
         var ChildClass = Base.createClass(ParentClass, {});
         var instance = ChildClass.createInstance();
-        var prototype = Object.getPrototypeOf(instance);
-        expect(Object.getPrototypeOf(prototype).parentMethod).toBe(parentPrototype.parentMethod);
+        expect(instance.parentMethod).toBe(parentTemplate.parentMethod);
       });
 
-      it('should create a class which has the child as its prototype', function() {
-        var prototype = {
+      it('should create a class which has the methods of the child', function() {
+        var template = {
           childMethod: function () {
           }
         };
-        var ChildClass = Base.createClass({}, prototype);
+        var ChildClass = Base.createClass({}, template);
         var instance = ChildClass.createInstance();
-        expect(Object.getPrototypeOf(instance).childMethod).toBe(prototype.childMethod);
+        expect(instance.childMethod).toBe(template.childMethod);
       });
     });
 
