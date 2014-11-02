@@ -16,7 +16,10 @@
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*",
+    ".gitignore",
+    "karma.conf.js",
+    "package.json",
+    "README.md",
     "node_modules",
     "bower_components",
     "test",
