@@ -31,14 +31,15 @@ describe('Base', function() {
       describe('given a parent class', function () {
 
         it('should create a class which inherits methods from the parent', function () {
-          var ParentClass = Base.createClass({
+          var parentPrototype = {
             parentMethod: function () {
             }
-          });
+          };
+          var ParentClass = Base.createClass(parentPrototype);
           var ChildClass = Base.createClass(ParentClass, {});
           var instance = ChildClass.createInstance();
           var prototype = Object.getPrototypeOf(instance);
-          expect(Object.getPrototypeOf(prototype).parentMethod).toBe(ParentClass.parentMethod);
+          expect(Object.getPrototypeOf(prototype).parentMethod).toBe(parentPrototype.parentMethod);
         });
 
         it('should create a class which has the child as its prototype', function() {
