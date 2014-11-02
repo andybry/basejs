@@ -1,6 +1,6 @@
 {
   "name": "basejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/andybry/basejs",
   "authors": [
     "Andy Bryant <ar.bryant@btinternet.com>"
@@ -19,6 +19,7 @@
     ".gitignore",
     "karma.conf.js",
     "package.json",
+    "bower.json",
     "README.md",
     "node_modules",
     "bower_components",
