@@ -25,10 +25,9 @@ describe('Base', function() {
       var instance = Person.createInstance('Andy', 'Bryant');
       expect(instance.getName()).toEqual('Andy Bryant');
     });
-    
-;
 
   });
+
   describe('Ability to create classes with superclasses', function() {
 
     describe('given a parent class', function () {
