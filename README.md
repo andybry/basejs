@@ -8,7 +8,7 @@ The problem this library overcomes is the fact that JavaScript does not supply a
 
 ## Usage
 
-First include the Base.js library from the js folder. For IE8 and below you will also need to provide a polyfill for the Object.create method.
+First include the Base.js library from the js folder. For IE8 and below (as well as any other ES3 browsers) you will also need to provide the polyfill for the Object.create method, which can be found in the js/polyfills/Object.create.js file.
 
 Then the following basic patterns can be used:
 
