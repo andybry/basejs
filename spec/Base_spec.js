@@ -11,7 +11,7 @@ describe('Base', function() {
       expect(Object.getPrototypeOf(instance).myMethod).toBe(prototype.myMethod);
     });
 
-    it('should pass create arguments to the initialization method', function() {
+    it('should initialise instances using the initialization method', function() {
       var Person = Base.createClass({
         _init: function(firstName, surname) {
           this._firstName = firstName;
