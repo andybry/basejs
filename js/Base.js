@@ -11,11 +11,13 @@ var Base = {
 
   createClass: function(prototype) {
     var newClass = prototype;
-    if(typeof arguments[1] != 'undefined') {
+    var parentProvided = typeof arguments[1] != 'undefined';
+    if(parentProvided) {
       newClass = Object.create(prototype);
     }
     newClass.createInstance = this.createInstance;
-    if(typeof newClass._init == 'undefined') {
+    var needsDefaultInit = typeof newClass._init == 'undefined';
+    if(needsDefaultInit) {
       newClass._init = this._init;
     }
     return newClass;
