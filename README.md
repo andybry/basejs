@@ -60,3 +60,31 @@ Then to use the parameters when initialising:
 var myInstance = MyClass.createInstance('Andy', 'Bryant');
 var name = myInstance.myMethod();
 ```
+
+### 3. Creating a class with inheritance
+
+When you create a class with the `createClass` method, there is the option to pass in a parent class as the first argument. The class that is created will then automatically contain any methods from the parent (via the prototype chain), provided the method is not overridden in the child class.
+
+```javascript
+var ParentClass = Base.createClass({
+  parentMethod: function() {
+    // code goes here
+  }
+});
+
+var ChildClass = Base.createClass(ParentClass, {
+  childMethod: function() {
+    // code goes here
+  }
+});
+```
+
+Then the class can be used as above:
+
+```javascript
+var myInstance = ChildClass.createInstance();
+myInstance.parentMethod();
+myInstance.childMethod();
+```
+
+The `_init` method can be used with inheritance too by creating an `_init` method in either the parent class or the child.
