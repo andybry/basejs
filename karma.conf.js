@@ -65,9 +65,32 @@ module.exports = function(config) {
     singleRun: false
   });
 
+  /*
+   * CI Configuration
+   */
+  var customLaunchers = {
+    sl_chrome: {
+      base: 'SauceLabs',
+      browserName: 'chrome',
+      platform: 'Windows 7',
+      version: '38'
+    },
+    sl_ie_8: {
+      base: 'SauceLabs',
+      browserName: 'internet explorer',
+      platform: 'Windows 7',
+      version: '8'
+    }
+  };
+
   if(process.env.CI) {
     config.set({
-      browsers: ['PhantomJS'],
+      sauceLabs: {
+        testName: 'basejs'
+      },
+      customLaunchers: customLaunchers,
+      browsers: Object.keys(customLaunchers),
+      reporters: ['dots', 'saucelabs'],
       singleRun: true
     });
   }
