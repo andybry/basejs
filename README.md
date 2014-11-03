@@ -90,3 +90,4 @@ myInstance.childMethod();
 ```
 
 The `_init` method can be used with inheritance too by creating an `_init` method in either the parent class or the child.
+
