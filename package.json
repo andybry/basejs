@@ -8,6 +8,6 @@
     "karma-cli": "0.0.4"
   },
   "scripts": {
-    "test": "$(npm bin)/karma start --single-run --browsers PhantomJS"
+    "test": "CI=true $(npm bin)/karma start"
   }
 }
