@@ -1,4 +1,5 @@
 # basejs [![Build Status](https://travis-ci.org/andybry/basejs.svg?branch=master)](https://travis-ci.org/andybry/basejs)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/basejs.svg)](https://saucelabs.com/u/basejs)
 
 An OOJS implementation allowing classes to be developed in a consistent manner.
 
