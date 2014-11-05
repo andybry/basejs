@@ -17,6 +17,7 @@
   "license": "MIT",
   "ignore": [
     ".gitignore",
+    ".travis.yml",
     "karma.conf.js",
     "package.json",
     "bower.json",
